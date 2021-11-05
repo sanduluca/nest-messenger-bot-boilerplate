@@ -1,3 +1,6 @@
 {
-    "hello": "Salut, lume!"
+    "hello": "Salut, lume!",
+    "visit_site": "Vezi site-ul",
+    "start_over": "Începe din nou",
+    "greeting": "{user_first_name}, bun venit! Faceți clic pe \"GET STARTED\" pentru a scrie botului nostru."
 }

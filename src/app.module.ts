@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { WebhookModule } from './webhook/webhook.module';
 import { GraphApi } from './graph-api';
-import configuration from './config/configuration';
+import configuration, { Configuration } from './config/configuration';
 import * as path from 'path';
 import { I18nModule, I18nJsonParser } from 'nestjs-i18n';
 
@@ -27,4 +27,17 @@ import { I18nModule, I18nJsonParser } from 'nestjs-i18n';
   controllers: [AppController],
   providers: [AppService, GraphApi],
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private configService: ConfigService<Configuration>) {
+    const appUrl = this.configService.get('APP_URL')
+    const verifyToken = this.configService.get('VERIFY_TOKEN')
+    console.log(
+      "Is this the first time running?\n" +
+      "Make sure to set the both the Messenger profile, persona " +
+      "and webhook by visiting:\n" +
+      appUrl +
+      "/profile?mode=all&verify_token=" +
+      verifyToken
+    );
+  }
+}

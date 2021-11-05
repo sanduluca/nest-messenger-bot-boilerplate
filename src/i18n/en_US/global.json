@@ -1,3 +1,6 @@
 {
-    "hello": "Hello World!"
+    "hello": "Hello World!",
+    "visit_site": "Visit our site",
+    "start_over": "Start over",
+    "greeting": "{user_first_name}, welcome! Click \"GET STARTED\" to write to our Bot."
 }
