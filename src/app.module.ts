@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { WebhookModule } from './webhook/webhook.module';
+import { ProfileController } from './profile/profile.controller';
 import { GraphApi } from './graph-api';
 import configuration, { Configuration } from './config/configuration';
 import * as path from 'path';
@@ -24,7 +25,7 @@ import { I18nModule, I18nJsonParser } from 'nestjs-i18n';
     }),
     WebhookModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, ProfileController],
   providers: [AppService, GraphApi],
 })
 export class AppModule {
