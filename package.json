@@ -24,8 +24,10 @@
     "@nestjs/config": "^1.0.2",
     "@nestjs/core": "^8.0.6",
     "@nestjs/platform-express": "^8.0.6",
+    "camelcase": "^6.2.0",
     "nestjs-i18n": "^8.1.6",
     "reflect-metadata": "^0.1.13",
+    "request": "^2.88.2",
     "rimraf": "^3.0.2",
     "rxjs": "^7.3.0"
   },
